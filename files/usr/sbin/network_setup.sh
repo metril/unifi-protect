@@ -8,7 +8,7 @@
 #     proxy network), renamed for UNVR two-NIC conventions.
 #
 # The LAN subnet prefix is read from the LAN_SUBNET_PREFIX env var
-# (e.g. "10.10.76"), which is passed via docker-compose's `environment:`
+# (e.g. "10.10.76"), which is passed via the compose file's `environment:`
 # block. We source /proc/1/environ because systemd does not propagate
 # docker env into unit ExecStart.
 

@@ -6,7 +6,7 @@ Image: `ghcr.io/metril/unifi-protect:stable` (also `:previous`, `:<protect-versi
 
 ## Deploy (Dockhand stack / plain compose)
 
-1. Paste `compose/docker-compose.yml` as a stack, or point Dockhand at this repo.
+1. Paste `compose/compose.yaml` as a stack, or point Dockhand at this repo.
 2. Set the variables from `compose/.env.example` as stack variables (or `.env`).
 3. Deploy. The `traefik-proxy` network must already exist.
 
