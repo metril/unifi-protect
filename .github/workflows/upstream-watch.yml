@@ -1,0 +1,44 @@
+name: upstream-watch
+
+on:
+  schedule:
+    - cron: '23 5 * * 1'
+  workflow_dispatch:
+
+concurrency:
+  group: upstream-watch
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  watch:
+    runs-on: ubuntu-24.04-arm
+    timeout-minutes: 10
+    permissions:
+      contents: write
+      issues: write
+    env:
+      GH_TOKEN: ${{ github.token }}
+      UP: dciancu/unifi-protect-unvr-docker-arm64
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - name: Compare upstream state
+        run: |
+          set -euo pipefail
+          main_sha=$(gh api "repos/$UP/commits/main" --jq .sha)
+          prs=$(gh api "repos/$UP/pulls?state=open&per_page=100" --jq '[.[].number] | sort')
+          pr83=$(gh pr view 83 -R "$UP" --json headRefOid --jq .headRefOid)
+          new=$(jq -n --arg m "$main_sha" --argjson p "$prs" --arg h "$pr83" '{upstream_main: $m, open_prs: $p, pr83_head: $h}')
+          old=$(cat .github/upstream-state.json 2>/dev/null || echo '{}')
+          if [ "$(jq -S . <<<"$new")" = "$(jq -S . <<<"$old")" ]; then echo "no upstream change"; exit 0; fi
+          gh label create upstream-change --color 0e8a16 2>/dev/null || true
+          body="Upstream changed.\n\nOld: $(jq -c . <<<"$old")\nNew: $(jq -c . <<<"$new")"
+          gh issue create --title "Upstream changes detected" --label upstream-change --body "$(printf '%b' "$body")"
+          jq . <<<"$new" > .github/upstream-state.json
+          git config user.name metril
+          git config user.email 1517921+metril@users.noreply.github.com
+          git add .github/upstream-state.json
+          git commit -m "Record upstream state"
+          git push origin HEAD:main

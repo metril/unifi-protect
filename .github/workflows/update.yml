@@ -1,0 +1,91 @@
+name: update
+
+on:
+  schedule:
+    - cron: '17 4 * * *'
+  workflow_dispatch:
+
+concurrency:
+  group: update
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  resolve:
+    runs-on: ubuntu-24.04-arm
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    outputs:
+      changed: ${{ steps.r.outputs.changed }}
+      versions_json: ${{ steps.json.outputs.versions_json }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0
+        with:
+          python-version: '3.13'
+      - id: r
+        run: python scripts/resolve_versions.py
+      - id: json
+        run: echo "versions_json=$(jq -c . versions.json)" >> "$GITHUB_OUTPUT"
+
+  build:
+    needs: resolve
+    if: needs.resolve.outputs.changed == 'true'
+    permissions:
+      contents: read
+      packages: write
+    uses: ./.github/workflows/build.yml
+    with:
+      versions_json: ${{ needs.resolve.outputs.versions_json }}
+      publish: true
+
+  commit:
+    needs: [resolve, build]
+    runs-on: ubuntu-24.04-arm
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          ref: main
+      - name: Commit versions.json
+        env:
+          VERSIONS_JSON: ${{ needs.resolve.outputs.versions_json }}
+        run: |
+          set -euo pipefail
+          echo "$VERSIONS_JSON" | jq . > versions.json
+          git config user.name metril
+          git config user.email 1517921+metril@users.noreply.github.com
+          git add versions.json
+          git commit -m "Bump Ubiquiti versions"
+          git pull --rebase origin main
+          git push origin HEAD:main
+
+  notify-failure:
+    needs: [resolve, build, commit]
+    if: failure()
+    runs-on: ubuntu-24.04-arm
+    timeout-minutes: 5
+    permissions:
+      issues: write
+    steps:
+      - uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3
+        with:
+          script: |
+            const label = 'auto-update-failure';
+            const {owner, repo} = context.repo;
+            try { await github.rest.issues.createLabel({owner, repo, name: label, color: 'b60205'}); } catch (e) {}
+            const run = `${context.serverUrl}/${owner}/${repo}/actions/runs/${context.runId}`;
+            const body = `Automatic update failed: ${run}`;
+            const {data} = await github.rest.issues.listForRepo({owner, repo, labels: label, state: 'open'});
+            if (data.length) {
+              await github.rest.issues.createComment({owner, repo, issue_number: data[0].number, body});
+            } else {
+              await github.rest.issues.create({owner, repo, title: 'Automatic update failing', labels: [label], body});
+            }

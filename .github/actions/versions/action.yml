@@ -1,0 +1,36 @@
+name: versions
+description: Optionally override versions.json and expose docker build args
+inputs:
+  versions_json:
+    description: JSON content to use instead of the checked-in versions.json
+    default: ""
+outputs:
+  build_args:
+    description: Multi-line KEY=VALUE docker build args
+    value: ${{ steps.args.outputs.build_args }}
+  fw_version:
+    value: ${{ steps.args.outputs.fw_version }}
+  protect_version:
+    value: ${{ steps.args.outputs.protect_version }}
+runs:
+  using: composite
+  steps:
+    - name: Write versions.json override
+      if: inputs.versions_json != ''
+      shell: bash
+      env:
+        VERSIONS_JSON: ${{ inputs.versions_json }}
+      run: printf '%s\n' "$VERSIONS_JSON" > versions.json
+    - name: Compute build args
+      id: args
+      shell: bash
+      run: |
+        set -euo pipefail
+        args=$(python3 scripts/build_args.py versions.json "$GITHUB_SHA")
+        {
+          echo 'build_args<<EOF'
+          echo "$args"
+          echo 'EOF'
+          echo "fw_version=$(sed -n 's/^FW_VERSION=//p' <<<"$args")"
+          echo "protect_version=$(sed -n 's/^PROTECT_VERSION=//p' <<<"$args")"
+        } >> "$GITHUB_OUTPUT"

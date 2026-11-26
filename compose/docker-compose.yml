@@ -1,0 +1,59 @@
+# Plain compose file: works as a Dockhand stack (paste it, or point Dockhand at this repo).
+# All site values come from the stack environment / .env (see .env.example).
+services:
+  unifi-protect:
+    image: ${IMAGE:-ghcr.io/metril/unifi-protect:stable}
+    tty: true
+    hostname: UNVR
+    extra_hosts:
+      - "UNVR:127.0.1.1"
+    container_name: unifi-protect
+    stop_grace_period: 2m
+    cgroup: host
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup
+      # absolute host paths (relative paths would resolve against the stack directory)
+      - ${STORAGE_PATH:?set STORAGE_PATH to an absolute host path}/srv:/srv
+      - ${STORAGE_PATH}/data:/data
+      - ${STORAGE_PATH}/persistent:/persistent
+    environment:
+      - container=docker
+      - STORAGE_DISK=${STORAGE_DISK:-/dev/sda}
+      - DEBUG=${DEBUG:-false}
+      # first three octets of the LAN subnet; empty = leave interfaces untouched
+      - LAN_SUBNET_PREFIX=${LAN_SUBNET_PREFIX:-}
+    restart: unless-stopped
+    cap_add:
+      - dac_read_search
+      - sys_admin
+    security_opt:
+      - apparmor=unconfined
+      - seccomp=unconfined
+    tmpfs:
+      - /run
+      - /run/lock
+      - /tmp
+      - /var/run
+      - /var/run/lock
+    privileged: true
+    # unvr_lan: macvlan with a dedicated LAN IP. Docker picks the primary network by
+    # priority (higher first), so priority 1000 makes it the default-route network.
+    # traefik-proxy: external bridge shared with Traefik.
+    networks:
+      unvr_lan:
+        ipv4_address: ${UNVR_IP:?set UNVR_IP}
+        mac_address: ${MAC_ADDRESS:?set MAC_ADDRESS}
+        priority: 1000
+      traefik-proxy: {}
+
+networks:
+  unvr_lan:
+    driver: macvlan
+    driver_opts:
+      parent: ${MACVLAN_PARENT:?set MACVLAN_PARENT}
+    ipam:
+      config:
+        - subnet: ${LAN_SUBNET:?set LAN_SUBNET}
+          gateway: ${LAN_GATEWAY:?set LAN_GATEWAY}
+  traefik-proxy:
+    external: true

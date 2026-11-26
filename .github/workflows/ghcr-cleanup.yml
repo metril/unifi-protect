@@ -1,0 +1,29 @@
+name: ghcr-cleanup
+
+on:
+  schedule:
+    - cron: '41 3 * * 0'
+  workflow_dispatch:
+
+concurrency:
+  group: ghcr-cleanup
+  cancel-in-progress: false
+
+permissions: {}
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-24.04-arm
+    timeout-minutes: 15
+    permissions:
+      packages: write
+    strategy:
+      matrix:
+        package: [unifi-protect, unifi-protect-fwdebs]
+    steps:
+      - uses: actions/delete-package-versions@e5bc658cc4c965c472efe991f8beea3981499c55
+        with:
+          package-name: ${{ matrix.package }}
+          package-type: container
+          delete-only-untagged-versions: 'true'
+          min-versions-to-keep: 5
