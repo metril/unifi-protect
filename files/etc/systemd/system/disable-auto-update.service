@@ -1,0 +1,11 @@
+[Unit]
+Description=Disable in-app auto update (unifi-core firmware.yaml)
+After=unifi-core.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/sbin/disable_auto_update.sh
+
+[Install]
+WantedBy=multi-user.target
