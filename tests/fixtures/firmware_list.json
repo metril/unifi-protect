@@ -1,0 +1,477 @@
+{
+ "_embedded": {
+  "firmware": [
+   {
+    "channel": "release",
+    "created": "2026-11-10T14:30:33Z",
+    "file_size": 898205040,
+    "id": "c53ac1c7-31f1-480f-b4ae-1e2733c26161",
+    "md5": "1e31750a4efdf3dc07f82e45a756ff10",
+    "sha256_checksum": "0bb32c745bf5688cd693ef88d2cb4f9fdb13c386ef7c318d72b5a96195e78ed7",
+    "platform": "UNVR",
+    "product": "unifi-nvr",
+    "updated": "2026-11-10T14:30:33Z",
+    "tags": {
+     "ubnt_version": "UNVR4.al324.v6.0.17.701d2b2.261102.0320"
+    },
+    "version": "v6.0.17+701d2b2",
+    "version_major": 6,
+    "version_minor": 0,
+    "version_patch": 17,
+    "version_build": "701d2b2",
+    "probability_computed": 0,
+    "_links": {
+     "self": {
+      "href": "https://fw-update.ui.com/api/firmware/c53ac1c7-31f1-480f-b4ae-1e2733c26161"
+     },
+     "upload": [
+      {
+       "name": "data",
+       "href": "https://fw-update.ui.com/api/firmware/c53ac1c7-31f1-480f-b4ae-1e2733c26161/data"
+      },
+      {
+       "name": "changelog",
+       "href": "https://fw-update.ui.com/api/firmware/c53ac1c7-31f1-480f-b4ae-1e2733c26161/changelog"
+      }
+     ],
+     "data": {
+      "href": "https://fw-download.ubnt.com/data/unifi-nvr/16cd-UNVR-6.0.17-b6d4a1c5-98c9-41c9-94c6-2a259d4bccd0.bin"
+     }
+    }
+   },
+   {
+    "channel": "release",
+    "created": "2026-10-07T07:49:51Z",
+    "file_size": 839003867,
+    "id": "eb7db4d7-0db8-4260-80a6-6bda2a7e6c6a",
+    "md5": "358cf5a5d2deb775ba4eae7f9b9375cd",
+    "sha256_checksum": "4f1317954aad293b6b0b0272a8948a2cae9676a78252458093181da41823ffc8",
+    "platform": "UNVR",
+    "product": "unifi-nvr",
+    "updated": "2026-10-07T07:49:51Z",
+    "tags": {
+     "ubnt_version": "UNVR4.al324.v6.0.11.dd9ab55.260930.0750"
+    },
+    "version": "v6.0.11+dd9ab55",
+    "version_major": 6,
+    "version_minor": 0,
+    "version_patch": 11,
+    "version_build": "dd9ab55",
+    "probability_computed": 0,
+    "_links": {
+     "self": {
+      "href": "https://fw-update.ui.com/api/firmware/eb7db4d7-0db8-4260-80a6-6bda2a7e6c6a"
+     },
+     "upload": [
+      {
+       "name": "data",
+       "href": "https://fw-update.ui.com/api/firmware/eb7db4d7-0db8-4260-80a6-6bda2a7e6c6a/data"
+      },
+      {
+       "name": "changelog",
+       "href": "https://fw-update.ui.com/api/firmware/eb7db4d7-0db8-4260-80a6-6bda2a7e6c6a/changelog"
+      }
+     ],
+     "data": {
+      "href": "https://fw-download.ubnt.com/data/unifi-nvr/103b-UNVR-6.0.11-4a40c99d-9c96-4b76-9962-331648d35fdb.bin"
+     }
+    }
+   },
+   {
+    "channel": "release",
+    "created": "2026-09-10T13:29:52Z",
+    "file_size": 787559347,
+    "id": "7e4f6a30-3021-4552-ba62-ce766196e24e",
+    "md5": "c386831314c01da66f017ec70a4e1940",
+    "sha256_checksum": "b170e97f9b7a703947380aed1108221e70ab18074b986906aca9df10891ca1e0",
+    "platform": "UNVR",
+    "product": "unifi-nvr",
+    "updated": "2026-09-10T13:29:52Z",
+    "tags": {
+     "ubnt_version": "UNVR4.al324.v5.1.33.44ce47b.260909.0025"
+    },
+    "version": "v5.1.33+44ce47b",
+    "version_major": 5,
+    "version_minor": 1,
+    "version_patch": 33,
+    "version_build": "44ce47b",
+    "probability_computed": 0,
+    "_links": {
+     "self": {
+      "href": "https://fw-update.ui.com/api/firmware/7e4f6a30-3021-4552-ba62-ce766196e24e"
+     },
+     "upload": [
+      {
+       "name": "data",
+       "href": "https://fw-update.ui.com/api/firmware/7e4f6a30-3021-4552-ba62-ce766196e24e/data"
+      },
+      {
+       "name": "changelog",
+       "href": "https://fw-update.ui.com/api/firmware/7e4f6a30-3021-4552-ba62-ce766196e24e/changelog"
+      }
+     ],
+     "data": {
+      "href": "https://fw-download.ubnt.com/data/unifi-nvr/976a-UNVR-5.1.33-84c520f3-fb97-41e0-be2b-b0f89c46c7b8.bin"
+     }
+    }
+   },
+   {
+    "channel": "release",
+    "created": "2026-08-24T07:57:47Z",
+    "file_size": 787549159,
+    "id": "cf2a32e3-566b-4f5a-98cd-8d9b2daed4d8",
+    "md5": "a41a34fae93a32f03138c6d8a5eff1fd",
+    "sha256_checksum": "4656e679a53493c2cfc256bce9e54b6de416abf8acdceef6f6b50517e5780517",
+    "platform": "UNVR",
+    "product": "unifi-nvr",
+    "updated": "2026-08-24T07:57:47Z",
+    "tags": {
+     "ubnt_version": "UNVR4.al324.v5.1.31.5acc35d.260819.1714"
+    },
+    "version": "v5.1.31+5acc35d",
+    "version_major": 5,
+    "version_minor": 1,
+    "version_patch": 31,
+    "version_build": "5acc35d",
+    "probability_computed": 0,
+    "_links": {
+     "self": {
+      "href": "https://fw-update.ui.com/api/firmware/cf2a32e3-566b-4f5a-98cd-8d9b2daed4d8"
+     },
+     "upload": [
+      {
+       "name": "data",
+       "href": "https://fw-update.ui.com/api/firmware/cf2a32e3-566b-4f5a-98cd-8d9b2daed4d8/data"
+      },
+      {
+       "name": "changelog",
+       "href": "https://fw-update.ui.com/api/firmware/cf2a32e3-566b-4f5a-98cd-8d9b2daed4d8/changelog"
+      }
+     ],
+     "data": {
+      "href": "https://fw-download.ubnt.com/data/unifi-nvr/b4cf-UNVR-5.1.31-fe80a37f-26ac-42bd-bf0b-58e46b54f628.bin"
+     }
+    }
+   },
+   {
+    "channel": "release",
+    "created": "2026-07-27T15:50:27Z",
+    "file_size": 786253430,
+    "id": "c4017c71-3c2c-4745-8dd8-7ddfa8d705b5",
+    "md5": "3f661a852b6fb70946e2a94712df6923",
+    "sha256_checksum": "74f2833356e832bd97f59bb3686eaedaf704335631b5daabedfce4d30bb222fc",
+    "platform": "UNVR",
+    "product": "unifi-nvr",
+    "updated": "2026-07-27T15:50:27Z",
+    "tags": {
+     "ubnt_version": "UNVR4.al324.v5.1.25.84c48e7.260710.1602"
+    },
+    "version": "v5.1.25+84c48e7",
+    "version_major": 5,
+    "version_minor": 1,
+    "version_patch": 25,
+    "version_build": "84c48e7",
+    "probability_computed": 0,
+    "_links": {
+     "self": {
+      "href": "https://fw-update.ui.com/api/firmware/c4017c71-3c2c-4745-8dd8-7ddfa8d705b5"
+     },
+     "upload": [
+      {
+       "name": "data",
+       "href": "https://fw-update.ui.com/api/firmware/c4017c71-3c2c-4745-8dd8-7ddfa8d705b5/data"
+      },
+      {
+       "name": "changelog",
+       "href": "https://fw-update.ui.com/api/firmware/c4017c71-3c2c-4745-8dd8-7ddfa8d705b5/changelog"
+      }
+     ],
+     "data": {
+      "href": "https://fw-download.ubnt.com/data/unifi-nvr/44dc-UNVR-5.1.25-4d75bc90-b895-4d8f-baff-382f24fd36cf.bin"
+     }
+    }
+   },
+   {
+    "channel": "release",
+    "created": "2026-06-18T14:58:49Z",
+    "file_size": 790292418,
+    "id": "12d27963-fdbd-408d-b2c2-2e2f5ad877dd",
+    "md5": "a65d7dc6fd0eeb1c57e29de503afeb95",
+    "sha256_checksum": "e62b317a327e01a61ee51d1c10a79fed7e8e8f15f2c78797f890940a29a1096b",
+    "platform": "UNVR",
+    "product": "unifi-nvr",
+    "updated": "2026-06-18T14:58:49Z",
+    "tags": {
+     "ubnt_version": "UNVR4.al324.v5.1.19.3fbc1da.260613.0944"
+    },
+    "version": "v5.1.19+3fbc1da",
+    "version_major": 5,
+    "version_minor": 1,
+    "version_patch": 19,
+    "version_build": "3fbc1da",
+    "probability_computed": 0,
+    "_links": {
+     "self": {
+      "href": "https://fw-update.ui.com/api/firmware/12d27963-fdbd-408d-b2c2-2e2f5ad877dd"
+     },
+     "upload": [
+      {
+       "name": "data",
+       "href": "https://fw-update.ui.com/api/firmware/12d27963-fdbd-408d-b2c2-2e2f5ad877dd/data"
+      },
+      {
+       "name": "changelog",
+       "href": "https://fw-update.ui.com/api/firmware/12d27963-fdbd-408d-b2c2-2e2f5ad877dd/changelog"
+      }
+     ],
+     "data": {
+      "href": "https://fw-download.ubnt.com/data/unifi-nvr/e21a-UNVR-5.1.19-f3fe5f97-9f71-4815-ada7-95508f79b82e.bin"
+     }
+    }
+   },
+   {
+    "channel": "release",
+    "created": "2026-06-03T16:02:31Z",
+    "file_size": 783970485,
+    "id": "62c2a9e8-f57d-4c27-8121-2bb7127b21f1",
+    "md5": "3ef592aeaafa13d191b660835f45fc16",
+    "sha256_checksum": "d3e396cd6a1fde77d7c70c5a7a4dcf4caba2ed19bbeae005033137fb51f27be6",
+    "platform": "UNVR",
+    "product": "unifi-nvr",
+    "updated": "2026-06-03T16:20:02Z",
+    "tags": {
+     "ubnt_version": "UNVR4.al324.v5.1.15.ae647f5.260528.2022"
+    },
+    "version": "v5.1.15+ae647f5",
+    "version_major": 5,
+    "version_minor": 1,
+    "version_patch": 15,
+    "version_build": "ae647f5",
+    "probability": 0.1,
+    "probability_computed": 1,
+    "release_date": "2026-06-07T16:00:00Z",
+    "_links": {
+     "self": {
+      "href": "https://fw-update.ui.com/api/firmware/62c2a9e8-f57d-4c27-8121-2bb7127b21f1"
+     },
+     "upload": [
+      {
+       "name": "data",
+       "href": "https://fw-update.ui.com/api/firmware/62c2a9e8-f57d-4c27-8121-2bb7127b21f1/data"
+      },
+      {
+       "name": "changelog",
+       "href": "https://fw-update.ui.com/api/firmware/62c2a9e8-f57d-4c27-8121-2bb7127b21f1/changelog"
+      }
+     ],
+     "data": {
+      "href": "https://fw-download.ubnt.com/data/unifi-nvr/271e-UNVR-5.1.15-62c2a9e8-f57d-4c27-8121-2bb7127b21f1.bin"
+     }
+    }
+   },
+   {
+    "channel": "release",
+    "created": "2026-05-21T11:10:20Z",
+    "file_size": 735696831,
+    "id": "d13c449c-2f29-434e-b27a-267881a49da4",
+    "md5": "0c9f64babfc8e4d353012360b025e965",
+    "sha256_checksum": "9090bf31c5ae25744f2d04c1353002e838b8bd02bfef279def687ec430cf97aa",
+    "platform": "UNVR",
+    "product": "unifi-nvr",
+    "updated": "2026-05-21T11:18:05Z",
+    "tags": {
+     "ubnt_version": "UNVR4.al324.v5.1.12.a10f0a5.260521.0010"
+    },
+    "version": "v5.1.12+a10f0a5",
+    "version_major": 5,
+    "version_minor": 1,
+    "version_patch": 12,
+    "version_build": "a10f0a5",
+    "probability_computed": 0,
+    "_links": {
+     "self": {
+      "href": "https://fw-update.ui.com/api/firmware/d13c449c-2f29-434e-b27a-267881a49da4"
+     },
+     "upload": [
+      {
+       "name": "data",
+       "href": "https://fw-update.ui.com/api/firmware/d13c449c-2f29-434e-b27a-267881a49da4/data"
+      },
+      {
+       "name": "changelog",
+       "href": "https://fw-update.ui.com/api/firmware/d13c449c-2f29-434e-b27a-267881a49da4/changelog"
+      }
+     ],
+     "data": {
+      "href": "https://fw-download.ubnt.com/data/unifi-nvr/d11e-UNVR-5.1.12-d13c449c-2f29-434e-b27a-267881a49da4.bin"
+     }
+    }
+   },
+   {
+    "channel": "release",
+    "created": "2026-05-18T13:36:42Z",
+    "file_size": 703856721,
+    "id": "042a8c3a-d46c-460d-a640-a8f5e73b82ac",
+    "md5": "139b5561cb4b7448d2967b2b4666e53d",
+    "sha256_checksum": "ed553d687153566ac4d05ba06bedcf3dd2987d6b9395d4cf66a1f8defcb0a5ad",
+    "platform": "UNVR",
+    "product": "unifi-nvr",
+    "updated": "2026-05-19T10:40:13Z",
+    "tags": {
+     "ubnt_version": "UNVR4.al324.v5.1.11.a880068.260507.1447"
+    },
+    "version": "v5.1.11+a880068",
+    "version_major": 5,
+    "version_minor": 1,
+    "version_patch": 11,
+    "version_build": "a880068",
+    "probability": 0.01,
+    "probability_computed": 1,
+    "release_date": "2026-06-25T16:00:00Z",
+    "_links": {
+     "self": {
+      "href": "https://fw-update.ui.com/api/firmware/042a8c3a-d46c-460d-a640-a8f5e73b82ac"
+     },
+     "upload": [
+      {
+       "name": "data",
+       "href": "https://fw-update.ui.com/api/firmware/042a8c3a-d46c-460d-a640-a8f5e73b82ac/data"
+      },
+      {
+       "name": "changelog",
+       "href": "https://fw-update.ui.com/api/firmware/042a8c3a-d46c-460d-a640-a8f5e73b82ac/changelog"
+      }
+     ],
+     "data": {
+      "href": "https://fw-download.ubnt.com/data/unifi-nvr/6052-UNVR-5.1.11-042a8c3a-d46c-460d-a640-a8f5e73b82ac.bin"
+     }
+    }
+   },
+   {
+    "channel": "release",
+    "created": "2026-03-23T14:14:26Z",
+    "file_size": 693649045,
+    "id": "9d351dce-a3e1-4bf6-acd9-519a4e2b330f",
+    "md5": "54b27542e29b7fce02123923a701838a",
+    "sha256_checksum": "1f6e7918a67c05da00d130bc53af5388c718a09720cb545d29903418f8e64629",
+    "platform": "UNVR",
+    "product": "unifi-nvr",
+    "updated": "2026-03-23T14:16:08Z",
+    "tags": {
+     "ubnt_version": "UNVR4.al324.v5.0.16.238fde6.260227.0039"
+    },
+    "version": "v5.0.16+238fde6",
+    "version_major": 5,
+    "version_minor": 0,
+    "version_patch": 16,
+    "version_build": "238fde6",
+    "probability": 0.2,
+    "probability_computed": 1,
+    "release_date": "2026-03-30T16:00:00Z",
+    "_links": {
+     "self": {
+      "href": "https://fw-update.ui.com/api/firmware/9d351dce-a3e1-4bf6-acd9-519a4e2b330f"
+     },
+     "upload": [
+      {
+       "name": "data",
+       "href": "https://fw-update.ui.com/api/firmware/9d351dce-a3e1-4bf6-acd9-519a4e2b330f/data"
+      },
+      {
+       "name": "changelog",
+       "href": "https://fw-update.ui.com/api/firmware/9d351dce-a3e1-4bf6-acd9-519a4e2b330f/changelog"
+      }
+     ],
+     "data": {
+      "href": "https://fw-download.ubnt.com/data/unifi-nvr/df86-UNVR-5.0.16-9d351dce-a3e1-4bf6-acd9-519a4e2b330f.bin"
+     }
+    }
+   },
+   {
+    "channel": "release",
+    "created": "2026-02-18T13:26:19Z",
+    "file_size": 693577004,
+    "id": "5fc20899-54b4-44a2-a958-f3b210adf9da",
+    "md5": "204fd23321a66d85b888ee59f07dae1c",
+    "sha256_checksum": "984fa60bd966418892f618ff73ce945b8b826f3e90b033e296de7e6e537697b5",
+    "platform": "UNVR",
+    "product": "unifi-nvr",
+    "updated": "2026-02-18T13:27:16Z",
+    "tags": {
+     "ubnt_version": "UNVR4.al324.v5.0.13.41cd692.260202.1204"
+    },
+    "version": "v5.0.13+41cd692",
+    "version_major": 5,
+    "version_minor": 0,
+    "version_patch": 13,
+    "version_build": "41cd692",
+    "probability": 0.4,
+    "probability_computed": 1,
+    "release_date": "2026-02-20T16:00:00Z",
+    "_links": {
+     "self": {
+      "href": "https://fw-update.ui.com/api/firmware/5fc20899-54b4-44a2-a958-f3b210adf9da"
+     },
+     "upload": [
+      {
+       "name": "data",
+       "href": "https://fw-update.ui.com/api/firmware/5fc20899-54b4-44a2-a958-f3b210adf9da/data"
+      },
+      {
+       "name": "changelog",
+       "href": "https://fw-update.ui.com/api/firmware/5fc20899-54b4-44a2-a958-f3b210adf9da/changelog"
+      }
+     ],
+     "data": {
+      "href": "https://fw-download.ubnt.com/data/unifi-nvr/3488-UNVR-5.0.13-5fc20899-54b4-44a2-a958-f3b210adf9da.bin"
+     }
+    }
+   },
+   {
+    "channel": "release",
+    "created": "2026-02-09T13:51:19Z",
+    "file_size": 693519966,
+    "id": "135b344a-c0b7-42ac-91ed-2fe2cde48b97",
+    "md5": "efb3dd9d9a1ab10261128b921f0609c0",
+    "sha256_checksum": "2ee29c75fbda49ebd7fb44b004d519a24ad47544e44d3947c0c03e76f87094f4",
+    "platform": "UNVR",
+    "product": "unifi-nvr",
+    "updated": "2026-02-09T13:53:20Z",
+    "tags": {
+     "ubnt_version": "UNVR4.al324.v5.0.12.64e93f2.260121.1310"
+    },
+    "version": "v5.0.12+64e93f2",
+    "version_major": 5,
+    "version_minor": 0,
+    "version_patch": 12,
+    "version_build": "64e93f2",
+    "probability": 0.1,
+    "probability_computed": 1,
+    "release_date": "2026-02-16T16:00:00Z",
+    "_links": {
+     "self": {
+      "href": "https://fw-update.ui.com/api/firmware/135b344a-c0b7-42ac-91ed-2fe2cde48b97"
+     },
+     "upload": [
+      {
+       "name": "data",
+       "href": "https://fw-update.ui.com/api/firmware/135b344a-c0b7-42ac-91ed-2fe2cde48b97/data"
+      },
+      {
+       "name": "changelog",
+       "href": "https://fw-update.ui.com/api/firmware/135b344a-c0b7-42ac-91ed-2fe2cde48b97/changelog"
+      }
+     ],
+     "data": {
+      "href": "https://fw-download.ubnt.com/data/unifi-nvr/b93d-UNVR-5.0.12-135b344a-c0b7-42ac-91ed-2fe2cde48b97.bin"
+     }
+    }
+   }
+  ]
+ },
+ "_links": {
+  "self": {
+   "href": "https://fw-update.ui.com/api/firmware"
+  }
+ }
+}

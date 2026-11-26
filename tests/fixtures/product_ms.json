@@ -1,0 +1,181 @@
+{
+ "_embedded": {
+  "firmware": [
+   {
+    "channel": "release",
+    "created": "2026-10-08T12:58:08Z",
+    "file_size": 12266540,
+    "id": "5eae6a76-f40a-431c-904d-093b97e4a19e",
+    "md5": "f6ba6a6b9926f370260d539a66903b6a",
+    "sha256_checksum": "8a2610374e3b77f04402daf2b25827673a0bee3c0c94cabe50aed6bb0a34a2b3",
+    "platform": "uos-deb13-arm64",
+    "product": "ms",
+    "updated": "2026-10-08T12:58:09Z",
+    "version": "v5.1.317",
+    "version_major": 5,
+    "version_minor": 1,
+    "version_patch": 317,
+    "probability_computed": 0,
+    "_links": {
+     "self": {
+      "href": "https://fw-update.ui.com/api/firmware/5eae6a76-f40a-431c-904d-093b97e4a19e"
+     },
+     "upload": [
+      {
+       "name": "data",
+       "href": "https://fw-update.ui.com/api/firmware/5eae6a76-f40a-431c-904d-093b97e4a19e/data"
+      },
+      {
+       "name": "changelog",
+       "href": "https://fw-update.ui.com/api/firmware/5eae6a76-f40a-431c-904d-093b97e4a19e/changelog"
+      }
+     ],
+     "data": {
+      "href": "https://fw-download.ubnt.com/data/ms/b32c-uos-deb13-arm64-5.1.317-5eae6a76-f40a-431c-904d-093b97e4a19e.deb"
+     }
+    }
+   },
+   {
+    "channel": "release",
+    "created": "2026-08-14T09:00:42Z",
+    "file_size": 12246552,
+    "id": "d98bf91e-fce9-45b4-b542-d3355ccbd85f",
+    "md5": "f6c108741c447e4f30f9e064e6a88b1a",
+    "sha256_checksum": "9af9e2f7574641648672f42c37a08190fa0dd19308e53e732911d0f2bfe7aaee",
+    "platform": "uos-deb13-arm64",
+    "product": "ms",
+    "updated": "2026-08-14T09:00:42Z",
+    "version": "v5.1.309",
+    "version_major": 5,
+    "version_minor": 1,
+    "version_patch": 309,
+    "probability_computed": 0,
+    "_links": {
+     "self": {
+      "href": "https://fw-update.ui.com/api/firmware/d98bf91e-fce9-45b4-b542-d3355ccbd85f"
+     },
+     "upload": [
+      {
+       "name": "data",
+       "href": "https://fw-update.ui.com/api/firmware/d98bf91e-fce9-45b4-b542-d3355ccbd85f/data"
+      },
+      {
+       "name": "changelog",
+       "href": "https://fw-update.ui.com/api/firmware/d98bf91e-fce9-45b4-b542-d3355ccbd85f/changelog"
+      }
+     ],
+     "data": {
+      "href": "https://fw-download.ubnt.com/data/ms/3cea-uos-deb13-arm64-5.1.309-959cf5b1-3d58-4cf4-a4f3-257f29f655c8.deb"
+     }
+    }
+   },
+   {
+    "channel": "release",
+    "created": "2026-06-08T13:04:18Z",
+    "file_size": 17771764,
+    "id": "76fb9568-4ad8-4dfa-9ade-a2943b4698c7",
+    "md5": "e51a957a271cbfb3a9082398dbc90c85",
+    "sha256_checksum": "fa75060d0a105fb12df889ee9d439f407189e2880ba4dd58841fd309ab53924b",
+    "platform": "uos-deb13-arm64",
+    "product": "ms",
+    "updated": "2026-06-08T13:04:19Z",
+    "version": "v5.1.290",
+    "version_major": 5,
+    "version_minor": 1,
+    "version_patch": 290,
+    "probability_computed": 0,
+    "_links": {
+     "self": {
+      "href": "https://fw-update.ui.com/api/firmware/76fb9568-4ad8-4dfa-9ade-a2943b4698c7"
+     },
+     "upload": [
+      {
+       "name": "data",
+       "href": "https://fw-update.ui.com/api/firmware/76fb9568-4ad8-4dfa-9ade-a2943b4698c7/data"
+      },
+      {
+       "name": "changelog",
+       "href": "https://fw-update.ui.com/api/firmware/76fb9568-4ad8-4dfa-9ade-a2943b4698c7/changelog"
+      }
+     ],
+     "data": {
+      "href": "https://fw-download.ubnt.com/data/ms/406c-uos-deb13-arm64-5.1.290-76fb9568-4ad8-4dfa-9ade-a2943b4698c7.deb"
+     }
+    }
+   },
+   {
+    "channel": "release",
+    "created": "2026-05-27T13:42:41Z",
+    "file_size": 17771726,
+    "id": "1b67c429-0a7c-4057-89b0-2a0eaca405dd",
+    "md5": "cae6fa55b260e03a606260db3b10b1e3",
+    "sha256_checksum": "3eece4829e217f3f52cce853aaa6e9721a820165e400686ebe13de2e92b79437",
+    "platform": "uos-deb13-arm64",
+    "product": "ms",
+    "updated": "2026-05-27T13:42:41Z",
+    "version": "v5.1.287",
+    "version_major": 5,
+    "version_minor": 1,
+    "version_patch": 287,
+    "probability_computed": 0,
+    "_links": {
+     "self": {
+      "href": "https://fw-update.ui.com/api/firmware/1b67c429-0a7c-4057-89b0-2a0eaca405dd"
+     },
+     "upload": [
+      {
+       "name": "data",
+       "href": "https://fw-update.ui.com/api/firmware/1b67c429-0a7c-4057-89b0-2a0eaca405dd/data"
+      },
+      {
+       "name": "changelog",
+       "href": "https://fw-update.ui.com/api/firmware/1b67c429-0a7c-4057-89b0-2a0eaca405dd/changelog"
+      }
+     ],
+     "data": {
+      "href": "https://fw-download.ubnt.com/data/ms/811a-uos-deb13-arm64-5.1.287-1b67c429-0a7c-4057-89b0-2a0eaca405dd.deb"
+     }
+    }
+   },
+   {
+    "channel": "release",
+    "created": "2026-05-16T15:54:41Z",
+    "file_size": 17772112,
+    "id": "5f4a517b-285c-4836-8018-e1a5141623ed",
+    "md5": "0c7cf32cbc06e0679c66a5ed455d0076",
+    "sha256_checksum": "34d0ca841aa53ded3f674aa7636908f9ca41dc68c9402cf23f73579d0acce490",
+    "platform": "uos-deb13-arm64",
+    "product": "ms",
+    "updated": "2026-05-16T15:54:41Z",
+    "version": "v5.1.281",
+    "version_major": 5,
+    "version_minor": 1,
+    "version_patch": 281,
+    "probability_computed": 0,
+    "_links": {
+     "self": {
+      "href": "https://fw-update.ui.com/api/firmware/5f4a517b-285c-4836-8018-e1a5141623ed"
+     },
+     "upload": [
+      {
+       "name": "data",
+       "href": "https://fw-update.ui.com/api/firmware/5f4a517b-285c-4836-8018-e1a5141623ed/data"
+      },
+      {
+       "name": "changelog",
+       "href": "https://fw-update.ui.com/api/firmware/5f4a517b-285c-4836-8018-e1a5141623ed/changelog"
+      }
+     ],
+     "data": {
+      "href": "https://fw-download.ubnt.com/data/ms/3c81-uos-deb13-arm64-5.1.281-5f4a517b-285c-4836-8018-e1a5141623ed.deb"
+     }
+    }
+   }
+  ]
+ },
+ "_links": {
+  "self": {
+   "href": "https://fw-update.ui.com/api/firmware"
+  }
+ }
+}

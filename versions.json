@@ -1,0 +1,121 @@
+{
+  "firmware": {
+    "url": "https://fw-download.ubnt.com/data/unifi-nvr/103b-UNVR-6.0.11-4a40c99d-9c96-4b76-9962-331648d35fdb.bin",
+    "version": "6.0.11",
+    "released": "2026-10-07",
+    "sha256": "4f1317954aad293b6b0b0272a8948a2cae9676a78252458093181da41823ffc8",
+    "size": 839003867
+  },
+  "base_image": {
+    "ref": "debian:13",
+    "digest": "sha256:3cda3ca472ce45507a5109c6a3907093e24d9ae67d55954c9a07a45665dafba2"
+  },
+  "packages_to_extract": [
+    "ubnt-archive-keyring",
+    "unifi-core",
+    "ubnt-tools",
+    "ulp-go",
+    "unifi-assets-unvr",
+    "unifi-directory",
+    "uos",
+    "uos-agent",
+    "uos-discovery-client",
+    "node*",
+    "unifi-email-templates-all",
+    "fluent-bit"
+  ],
+  "products": {
+    "unifi-protect": {
+      "url": "https://fw-download.ubnt.com/data/unifi-protect/7d4e-uos-deb13-arm64-7.3.74-7ed4b7fb-4d5f-4105-9f74-83b5a05b6c62.deb",
+      "version": "7.3.74",
+      "released": "2026-11-03",
+      "sha256": "590fa17f9f7d4eb14abea9c6f1a0ab29cd097af83c005889289c8c97be371522",
+      "size": 140599196
+    },
+    "ai-feature-console": {
+      "url": "https://fw-download.ubnt.com/data/ai-feature-console/a678-uos-deb13-arm64-1.11.0-636c4bf3-485f-4231-a1ee-902e5024b4b1.deb",
+      "version": "1.11.0",
+      "released": "2026-08-14",
+      "sha256": "82f5a88b006153d006a14840bbf8d9cea3ea1570d89406ed71a6d45b1649df0d",
+      "size": 3913384
+    },
+    "ai-feature-controller": {
+      "url": "https://fw-download.ubnt.com/data/ai-feature-controller/2ea0-uos-deb13-arm64-2.1.6-ef21339a-2898-48d2-8811-f94b97cb8e3c.deb",
+      "version": "2.1.6",
+      "released": "2026-11-03",
+      "sha256": "4b66dfafa57a1b2a7a34b7f8166ef92d4db34f131502e06cca5182733a70676a",
+      "size": 43107348
+    },
+    "ms": {
+      "url": "https://fw-download.ubnt.com/data/ms/b32c-uos-deb13-arm64-5.1.317-5eae6a76-f40a-431c-904d-093b97e4a19e.deb",
+      "version": "5.1.317",
+      "released": "2026-10-08",
+      "sha256": "8a2610374e3b77f04402daf2b25827673a0bee3c0c94cabe50aed6bb0a34a2b3",
+      "size": 12266540
+    },
+    "msr": {
+      "url": "https://fw-download.ubnt.com/data/msr/bed2-uos-deb13-arm64-5.1.317-0198f358-184b-4012-a0a6-72cf979991c2.deb",
+      "version": "5.1.317",
+      "released": "2026-10-08",
+      "sha256": "43148e666732792a07efdd336dc749f9212e0ad2b03063208278da18ade83e10",
+      "size": 17203124
+    },
+    "msp": {
+      "url": "https://fw-download.ubnt.com/data/msp/47f8-uos-deb13-arm64-5.1.317-8961b7dd-b985-48e0-b5cf-f28e5406f1af.deb",
+      "version": "5.1.317",
+      "released": "2026-10-08",
+      "sha256": "d91c90645234de711af10dd85039acc1be4002acdf16cf01fba9ced1485d42b3",
+      "size": 13171580
+    },
+    "mst": {
+      "url": "https://fw-download.ubnt.com/data/mst/18a2-uos-deb13-arm64-5.1.317-f52b6d71-817b-4b22-bf99-bac8ecc7f247.deb",
+      "version": "5.1.317",
+      "released": "2026-10-08",
+      "sha256": "b5bf5377eac7b483c8f0da444fa8507c3d5f39b4342590ef9c1e5d8ad5c390f7",
+      "size": 4228016
+    },
+    "msf": {
+      "url": "https://fw-download.ubnt.com/data/msf/0332-uos-deb13-arm64-0.0.7-680bcb93-21c0-4b72-8592-3f5f3166189c.deb",
+      "version": "0.0.7",
+      "released": "2026-08-14",
+      "sha256": "0589b504d4f6344147e6133ac19fc107014c21d62d7c04063362d869fb25d9b8",
+      "size": 1638496
+    },
+    "ds": {
+      "url": "https://fw-download.ubnt.com/data/ds/6406-uos-deb13-arm64-7.3.6-108c5dae-10d3-4161-8437-7254b3a4e1e1.deb",
+      "version": "7.3.6",
+      "released": "2026-10-08",
+      "sha256": "91484e46e025491e8d213728f6dc12efb5a95f147cc3cd7829239b7f2c9e16c8",
+      "size": 7136172
+    },
+    "protect-verify": {
+      "url": "https://fw-download.ubnt.com/data/protect-verify/18ac-uos-deb13-arm64-2.0.0-39a79ea2-2c6e-4fba-ac64-f269b3f63cce.deb",
+      "version": "2.0.0",
+      "released": "2026-10-08",
+      "sha256": "675454ee563caae64f6f00a444c6c1d98d2240bb434684a4263daa5187cf026b",
+      "size": 425066
+    },
+    "unifi-rclone": {
+      "url": "https://fw-download.ubnt.com/data/unifi-rclone/9d16-uos-deb13-arm64-1.74.4-9790-8567b01b-5d50-4723-a54b-eb59fae8f931.deb",
+      "version": "1.74.4-9790",
+      "released": "2026-07-30",
+      "sha256": "754560f9b6c957338152eb171b62aca073114618cb4c5bb6e27f8a444ff530df",
+      "size": 23392732
+    },
+    "unifi-user-assets": {
+      "url": "https://fw-download.ubnt.com/data/unifi-user-assets/1f71-uos-deb13-arm64-0.6.23-81676533-7fdd-4b83-b18e-7f93957ff8e9.deb",
+      "version": "0.6.23",
+      "released": "2026-10-30",
+      "sha256": "a09d54f6ff86fdf5898759fd0710ae83b97084d4213cac0012525d7ad694c57b",
+      "size": 27313932
+    },
+    "unifi-face-shared-lib": {
+      "url": "https://fw-download.ubnt.com/data/unifi-face-shared-lib/98da-uos-deb13-arm64-1.1.2-61dcce6e-64df-4d57-959a-3743a447a85f.deb",
+      "version": "1.1.2",
+      "released": "2026-07-15",
+      "sha256": "b4121afdd66afb23dd09506cf4bca60417ad26b4b7dafd9e0ff2804e3d920abb",
+      "size": 55711522
+    }
+  },
+  "soak_days": 3
+}
