@@ -4,12 +4,14 @@ services:
   unifi-protect:
     image: ${IMAGE:-ghcr.io/metril/unifi-protect:stable}
     tty: true
-    hostname: UNVR
+    hostname: ${UNVR_HOSTNAME:-UNVR}
     extra_hosts:
-      - "UNVR:127.0.1.1"
+      - "${UNVR_HOSTNAME:-UNVR}:127.0.1.1"
     container_name: unifi-protect
     stop_grace_period: 2m
     cgroup: host
+    devices:
+      - ${STORAGE_DISK:-/dev/sda}:${STORAGE_DISK:-/dev/sda}
     volumes:
       - /sys/fs/cgroup:/sys/fs/cgroup
       # absolute host paths (relative paths would resolve against the stack directory)
@@ -18,6 +20,8 @@ services:
       - ${STORAGE_PATH}/persistent:/persistent
     environment:
       - container=docker
+      # device model: UNVR or UNVR_PRO (see files/usr/sbin/ubnt-tools); keep what you used before
+      - DEVICE=${DEVICE:-UNVR}
       - STORAGE_DISK=${STORAGE_DISK:-/dev/sda}
       - DEBUG=${DEBUG:-false}
       # first three octets of the LAN subnet; empty = leave interfaces untouched
@@ -45,6 +49,14 @@ services:
         mac_address: ${MAC_ADDRESS:?set MAC_ADDRESS}
         priority: 1000
       traefik-proxy: {}
+    labels:
+      - traefik.enable=${TRAEFIK_ENABLE:-false}
+      - traefik.docker.network=traefik-proxy
+      - traefik.http.routers.unifi-protect.rule=Host(`${TRAEFIK_HOST:-protect.example.com}`)
+      - traefik.http.routers.unifi-protect.entrypoints=websecure
+      - traefik.http.routers.unifi-protect.tls=true
+      - traefik.http.services.unifi-protect.loadbalancer.server.port=443
+      - traefik.http.services.unifi-protect.loadbalancer.server.scheme=https
 
 networks:
   unvr_lan:
