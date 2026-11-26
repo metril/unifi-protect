@@ -40,11 +40,18 @@ def run_container(image, name, data_root):
 def wait_healthy(name):
     deadline = time.time() + TIMEOUT
     while time.time() < deadline:
-        st = docker("inspect", "-f", "{{.State.Running}} {{.State.Health.Status}}", name, check=False).stdout.split()
+        st = docker("inspect", "-f", "{{.State.Running}} {{if .State.Health}}{{.State.Health.Status}}{{end}}",
+                    name, check=False).stdout.split()
         if st[:1] == ["false"]:
             raise AssertionError(f"{name} exited:\n{docker('logs', '--tail', '80', name, check=False).stdout}")
         if st[1:] == ["healthy"]:
             return
+        if len(st) == 1:  # image without HEALTHCHECK (old fork image): probe directly
+            ok = docker("exec", name, "bash", "-c",
+                        "systemctl is-active --quiet unifi-protect && curl -ksf -o /dev/null https://localhost/",
+                        check=False).returncode == 0
+            if ok:
+                return
         time.sleep(10)
     raise AssertionError(f"{name} not healthy in {TIMEOUT}s:\n{docker('logs', '--tail', '80', name, check=False).stdout}")
 

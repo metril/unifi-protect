@@ -10,6 +10,10 @@ outputs:
     value: ${{ steps.args.outputs.build_args }}
   fw_version:
     value: ${{ steps.args.outputs.fw_version }}
+  fw_tag:
+    value: ${{ steps.args.outputs.fw_tag }}
+  image_version:
+    value: ${{ steps.args.outputs.image_version }}
   protect_version:
     value: ${{ steps.args.outputs.protect_version }}
 runs:
@@ -29,8 +33,10 @@ runs:
         args=$(python3 scripts/build_args.py versions.json "$GITHUB_SHA")
         {
           echo 'build_args<<EOF'
-          echo "$args"
+          grep -v '^FW_TAG=' <<<"$args"
           echo 'EOF'
+          echo "fw_tag=$(sed -n 's/^FW_TAG=//p' <<<"$args")"
+          echo "image_version=$(sed -n 's/^IMAGE_VERSION=//p' <<<"$args")"
           echo "fw_version=$(sed -n 's/^FW_VERSION=//p' <<<"$args")"
           echo "protect_version=$(sed -n 's/^PROTECT_VERSION=//p' <<<"$args")"
         } >> "$GITHUB_OUTPUT"

@@ -68,7 +68,7 @@ jobs:
       - name: Check for published fwdebs image
         id: check
         run: |
-          if docker manifest inspect "$FWDEBS:${{ steps.v.outputs.fw_version }}" >/dev/null 2>&1; then
+          if docker manifest inspect "$FWDEBS:${{ steps.v.outputs.fw_tag }}" >/dev/null 2>&1; then
             echo "exists=true" >> "$GITHUB_OUTPUT"
           else
             echo "exists=false" >> "$GITHUB_OUTPUT"
@@ -83,12 +83,12 @@ jobs:
           push: true
           provenance: false
           sbom: false
-          tags: ${{ env.FWDEBS }}:${{ steps.v.outputs.fw_version }}
+          tags: ${{ env.FWDEBS }}:${{ steps.v.outputs.fw_tag }}
           build-args: ${{ steps.v.outputs.build_args }}
       - id: out
         run: |
           if [ "${{ steps.check.outputs.exists }}" = true ] || [ "$PUBLISH" = true ]; then
-            echo "image=$FWDEBS:${{ steps.v.outputs.fw_version }}" >> "$GITHUB_OUTPUT"
+            echo "image=$FWDEBS:${{ steps.v.outputs.fw_tag }}" >> "$GITHUB_OUTPUT"
           else
             echo "image=" >> "$GITHUB_OUTPUT"   # empty: build the stage locally
           fi
@@ -205,7 +205,9 @@ jobs:
           set -euo pipefail
           gunzip -c image.tar.gz | docker load
           short="${GITHUB_SHA::7}"
-          if docker pull "$IMAGE:stable" >/dev/null 2>&1; then
+          new_ver="${{ steps.v.outputs.image_version }}"
+          if docker pull "$IMAGE:stable" >/dev/null 2>&1 \
+             && [ "$(docker inspect -f '{{ index .Config.Labels "org.opencontainers.image.version" }}' "$IMAGE:stable")" != "$new_ver" ]; then
             docker tag "$IMAGE:stable" "$IMAGE:previous"
             docker push "$IMAGE:previous"
           fi

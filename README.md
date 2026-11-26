@@ -32,7 +32,7 @@ Rollback: set the image to `:previous`, stop, restore the matching `/data/backup
 
 ## Automation
 
-- `update.yml` (daily): `scripts/resolve_versions.py` picks the newest Ubiquiti firmware and product debs that are at least `soak_days` (3) old, never downgrades, and fails on API schema changes. If `versions.json` changed it calls `build.yml`; on success it commits `versions.json` to `main`. Failures open one `auto-update-failure` issue.
+- `update.yml` (daily): `scripts/resolve_versions.py` picks the newest Ubiquiti firmware and product debs that are at least `soak_days` (3) old, never downgrades, and fails on API schema changes. If `versions.json` changed it calls `build.yml`; on success it commits `versions.json` to `main`. If a ruleset blocks the `GITHUB_TOKEN` push to `main`, add an optional `SYNC_TOKEN` secret (a PAT with bypass); it is used when present. Failures open one `auto-update-failure` issue.
 - `build.yml`: native arm64 build (`fwdebs` stage cached as `ghcr.io/metril/unifi-protect-fwdebs:<fw-version>`, registry layer cache), pytest unit/smoke/upgrade shards, aggregator check `build-result`, then publish on `main`.
 - `upstream-watch.yml` (weekly): issue when dciancu's `main`/PR list or topper59's PR #83 changes. Port changes by hand.
 - `ghcr-cleanup.yml` (weekly): remove untagged GHCR versions.

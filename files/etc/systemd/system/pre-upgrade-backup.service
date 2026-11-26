@@ -2,7 +2,7 @@
 Description=Back up persistent state when the image version changes
 DefaultDependencies=no
 After=local-fs.target sysinit.target
-Before=postgresql.service unifi-core.service postgresql-cluster-14-main-upgrade.service postgresql-cluster-14-protect-upgrade.service
+Before=postgresql.service unifi-core.service postgresql-cluster-14-main-upgrade.service postgresql-cluster-14-protect-upgrade.service dbpermissions.service
 
 [Service]
 Type=oneshot

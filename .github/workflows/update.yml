@@ -54,6 +54,8 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
         with:
           ref: main
+          # optional PAT that can bypass branch rulesets; falls back to GITHUB_TOKEN
+          token: ${{ secrets.SYNC_TOKEN || github.token }}
       - name: Commit versions.json
         env:
           VERSIONS_JSON: ${{ needs.resolve.outputs.versions_json }}

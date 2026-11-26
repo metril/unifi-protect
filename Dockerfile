@@ -52,6 +52,9 @@ RUN --mount=type=cache,target=/var/lib/apt/lists,sharing=locked --mount=type=cac
     && curl -fsSL https://www.postgresql.org/media/keys/ACCC4CF8.asc | gpg --dearmor -o /usr/share/keyrings/postgresql-archive-keyring.gpg \
     && echo "deb [signed-by=/usr/share/keyrings/postgresql-archive-keyring.gpg] https://apt.postgresql.org/pub/repos/apt/ $(lsb_release -cs)-pgdg main" \
         > /etc/apt/sources.list.d/postgresql.list \
+    # PG14 goes EOL 2026-11-12 and moves to the archive repo \
+    && echo "deb [signed-by=/usr/share/keyrings/postgresql-archive-keyring.gpg] https://apt-archive.postgresql.org/pub/repos/apt/ $(lsb_release -cs)-pgdg-archive main" \
+        >> /etc/apt/sources.list.d/postgresql.list \
     && apt-get update \
     && apt-get install -y --no-install-recommends postgresql-14
 
